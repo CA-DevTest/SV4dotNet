@@ -1,14 +1,14 @@
 # SV4dotNet
 Broadcom SV for Dot Net
 
-The SV4dotnet library provides a .NET developer with the CA Service
-Virtualization's capabilities, as well as creating the newly available BlazeVSE
-mock services. The .NET developer can create, update, and deploy the SV/BlazeVSE
-virtual/mock services directly from your .NET code.
+The SV4dotnet library provides .NET developers with CA Service
+Virtualization's capabilities, as well as with creating the newly available BlazeVSE
+mock services. The developer can create, update, deploy and delete the SV/BlazeVSE
+virtual/mock services directly from .NET code.
 
 ## Supported Virtual Services
 
-The following are the supported virtual services.
+The following are supported for creation/updation of virtual services.
 
 *SV*:
 
@@ -22,11 +22,15 @@ The following are the supported virtual services.
 
 -   VSI/VSM
 
+-   MAR file
+
+-   Change of Execution Mode
+
 *BlazeVSE:*
 
 -   MAR file
 
-The SV4dotnet library integrates with the Nunit test framework that is part of
+The SV4dotnet library integrates with the Nunit test framework as part of
 the MS Visual Studio IDE.
 
 ![Nunit Test Framework](https://github.com/CA-DevTest/SV-DOT-NET/blob/ea63fa08045210c56d6bc5150566a4ce07a25074/readme-images/Setup-nunit-tests.png)
@@ -39,15 +43,15 @@ Studio IDE infrastructure.
 ![SV4dotnet Architecture](https://github.com/CA-DevTest/SV-DOT-NET/blob/7bf51b18779eb3a4b3fc0b6bd4ff533239ee25fa/readme-images/architecture.png)
 
 This architecture provides with the flexibility to create virtual services in
-either SV or BlazeVSE. Each developer can then update the supplied config
+either SV or BlazeVSE. Each developer can update the supplied config
 (SV.config and BlazeVSE.config) files with their corresponding username/password
 (key API in case of BlazeVSE), as well as the SV/blazemeter URLs that will be
-used during the virtual services CRUD calls.
+used for the virtual services CRUD calls.
 
 ## SV4dotnet Runtime Configuration
 
-The following steps are necessary for a successful integration of SV4dotnet into
-your .NET solution development environment.
+The following steps are necessary for a successful integration of SV4dotnet into the
+.NET solution development environment.
 
 1.  Create Nunit tests project as part of your .NET solution
 

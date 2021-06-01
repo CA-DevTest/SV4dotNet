@@ -33,14 +33,14 @@ The following are supported for creation/updation of virtual services.
 The SV4dotnet library integrates with the Nunit test framework as part of
 the MS Visual Studio IDE.
 
-![Nunit Test Framework](https://github.com/CA-DevTest/SV-DOT-NET/blob/ea63fa08045210c56d6bc5150566a4ce07a25074/readme-images/Setup-nunit-tests.png)
+![Nunit Test Framework](https://github.com/CA-DevTest/SV4dotNet/blob/f8d448c64e81d56f28ba0b31f095343dfe0fe0ff/readme-images/Setup-nunit-tests.png)
 
 ## Architecture
 
 The SV4dotnet library is designed to be a seamless integration in your MS Visual
 Studio IDE infrastructure.
 
-![SV4dotnet Architecture](https://github.com/CA-DevTest/SV-DOT-NET/blob/7bf51b18779eb3a4b3fc0b6bd4ff533239ee25fa/readme-images/architecture.png)
+![SV4dotnet Architecture](https://github.com/CA-DevTest/SV4dotNet/blob/f8d448c64e81d56f28ba0b31f095343dfe0fe0ff/readme-images/architecture.png)
 
 This architecture provides with the flexibility to create virtual services in
 either SV or BlazeVSE. Each developer can update the supplied config

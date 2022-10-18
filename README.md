@@ -1,10 +1,7 @@
 # SV4dotNet
 Broadcom SV for Dot Net
 
-The SV4dotnet library provides .NET developers with CA Service
-Virtualization's capabilities, as well as with creating the newly available BlazeVSE
-mock services. The developer can create, update, deploy and delete the SV/BlazeVSE
-virtual/mock services directly from .NET code.
+The SV4dotnet library provides .NET developers with CA Service Virtualization's capabilities. The developer can create, update, deploy and delete the SV virtual services directly from .NET code.
 
 ## Supported Virtual Services
 
@@ -26,32 +23,21 @@ The following are supported for creation/updation of virtual services.
 
 -   Change of Execution Mode
 
-*BlazeVSE:*
-
--   MAR file
-
-The SV4dotnet library integrates with the Nunit test framework as part of
-the MS Visual Studio IDE.
+The SV4dotnet library integrates with the Nunit test framework as part of the MS Visual Studio IDE.
 
 ![Nunit Test Framework](https://github.com/CA-DevTest/SV4dotNet/blob/f8d448c64e81d56f28ba0b31f095343dfe0fe0ff/readme-images/Setup-nunit-tests.png)
 
 ## Architecture
 
-The SV4dotnet library is designed to be a seamless integration in your MS Visual
-Studio IDE infrastructure.
+The SV4dotnet library is designed to be a seamless integration in your MS Visual Studio IDE infrastructure.
 
 ![SV4dotnet Architecture](https://github.com/CA-DevTest/SV4dotNet/blob/f8d448c64e81d56f28ba0b31f095343dfe0fe0ff/readme-images/architecture.png)
 
-This architecture provides with the flexibility to create virtual services in
-either SV or BlazeVSE. Each developer can update the supplied config
-(SV.config and BlazeVSE.config) files with their corresponding username/password
-(key API in case of BlazeVSE), as well as the SV/blazemeter URLs that will be
-used for the virtual services CRUD calls.
+This architecture provides with the flexibility to create virtual services in SV. Each developer can update the supplied config (SV.config) file with their corresponding username/password as well as the SV URLs that will be used for the virtual services CRUD calls.
 
 ## SV4dotnet Runtime Configuration
 
-The following steps are necessary for a successful integration of SV4dotnet into the
-.NET solution development environment.
+The following steps are necessary for a successful integration of SV4dotnet into the .NET solution development environment.
 
 1.  Create Nunit tests project as part of your .NET solution
 
@@ -61,14 +47,10 @@ The following steps are necessary for a successful integration of SV4dotnet into
 
     2.  SV.config
 
-    3.  BlazeVSE.config
+    3.  Log4net.config
 
-    4.  Log4net.config
-
-3.  Install the following dependencies (you can download them via the nuget
-    manager that is part of MS Visual Studio). You would need to work closely
-    with your SCM team/dev management to make sure that you download and install
-    the following packages:
+3.  Install the following dependencies (you can download them via the nuget manager that is part of MS Visual Studio). You would need to work closely
+    with your SCM team/dev management to make sure that you download and install the following packages:
 
     1.  Authenticated Encryption 2.0.0
 
@@ -78,11 +60,9 @@ The following steps are necessary for a successful integration of SV4dotnet into
 
     4.  SystemConfiguration.ConfigurationManager 4.7.0
 
-4.  Add a setup method as part of your testcases. This method will load the
-    config (SV or BlazeVSE)
+4.  Add a setup method as part of your testcases. This method will load the SV.config
 
-5.  Add the necessary methods to create, update, and delete the virtual services
-    (as needed)
+5.  Add the necessary methods to create, update, and delete the virtual services (as needed)
 
 Here is an example in how to setup the Nunit tests
 
@@ -107,8 +87,7 @@ namespace DemoTestProject
 		
 		public void Setup()
 		{
-			// The below method will load the config that you would like to use 
-			// (Ex: for DevTest - SV.config and for Blazemeter - BlazeVSE.config)
+			// The below method will load the config that you would like to use (Ex: SV.config)
 			// Alternatively to read the below parameter during runtime, you can add it
 			// to the runsettings file and read it from the TestContext.Parameters
 			config = SVClient.SVLoadConfig(TestContext.Parameters["SV.config"]);
@@ -149,9 +128,7 @@ the desired config file dynamically.
 
 \<TestRunParameters\>
 
-\<Parameter name="SVConfig" value="BlazeVSE.Config" /\>
-
-\<!-- \<Parameter name="SVConfig" value="SV.Config" /\> --\>
+\<Parameter name="SVConfig" value="SV.Config" /\>
 
 \</TestRunParameters\>
 
@@ -161,8 +138,4 @@ the desired config file dynamically.
 
 ### Special note
 
-The SV4dotnet also includes support for secured SV portal (https). If you are
-going to be working in said secured SV environment, you will need to obtain a
-signed certificate from the SV admin team. The certificate will have a suffix of
-“CER” or “CRT” and be X-509 complaint for SV4dotnet to use it and be able to
-establish a trusted connection with the secured SV portal.
+The SV4dotnet also includes support for secured SV portal (https). If you are going to be working in said secured SV environment, you will need to obtain a signed certificate from the SV admin team. The certificate will have a suffix of “CER” or “CRT” and be X-509 complaint for SV4dotnet to use it and be able to establish a trusted connection with the secured SV portal.

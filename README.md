@@ -100,8 +100,6 @@ namespace DemoTestProject
 			// on what you plan to do
 			//the path1 and path2 arguements are associated with files 
 			// for creation of the SV virtual service
-			//the file arguement is associated with the files for the creation 
-			// of Blazemeter VSE virtual service
 			HttpResponseMessage response = SVClient.SVProcessRequests(config, user, 
 				password, "Update", "wgdemoservice", null, 
 				"Pet-onhold-req.txt", "Pet-onhold-rsp.txt", null).Result;
